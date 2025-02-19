@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: Consolas, monospace;
+            padding: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .wrapper {
+            display: flex;
+            width: 98%;
+            max-width: 100%;
+            align-items: stretch;
+        }
+
+        .image-container {
+            position: relative;
+            width: 40%;
+            min-width: 40%;
+            flex-shrink: 0;
+            margin-right: 15px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            aspect-ratio: 1/1;
+        }
+
+        .ascii-art, .real-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ascii-art img, .real-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 2px solid #00ff00;
+        }
+
+        .ascii-art {
+            opacity: 1;
+            animation: fade-out 8s infinite alternate;
+        }
+
+        .real-image {
+            opacity: 0;
+            animation: fade-in 8s infinite alternate;
+        }
+
+        .terminal {
+            flex-grow: 1;
+            border: 2px solid #00ff00;
+            padding: 10px;
+            text-align: left;
+            margin-left: 5px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        h1, h2{
+            margin: 5px 0;
+            line-height: 1.2;
+        }
+
+        a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+
+        .list p {
+            margin: 5px 0;
+            padding-left: 15px;
+        }
+
+        .list a {
+            color: #00ff00;
+            font-weight: bold;
+        }
+
+        .list a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .cursor-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: auto;
+            padding-top: 10px;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background-color: #00ff00;
+            margin-left: 5px;
+            vertical-align: middle;
+            animation: blink 0.5s infinite alternate;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fade-out {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="image-container">
+            <div class="ascii-art">
+                <img src="img/ascii-image.jpg" alt="ASCII">
+            </div>
+            <div class="real-image">
+                <img src="img/real-image.jpg" alt="Real">
+            </div>
+        </div>
+
+        <div class="terminal">
+            <h1>Hello, World!</h1>
+            <div>==============================================================</div>
+            <h2>About Me</h2>
+            <p> Hi, I'm Daniel. Currently a second-year Informatics student at<br>
+            Bandung Institute of Technology. Deeply passionate and always<br>
+            eager to learn new things.</p>
+            <div>==============================================================</div>
+            <h2>Projects</h2>
+            <div class="list">
+                <p>🔗 <a href="https://github.com/DanielDPW/Tugas-Besar-1-Algeo-IF2123-K01-03">Systems of Linear Equations Solver using Java</a></p>
+                <p>🔗 <a href="https://github.com/DanielDPW/Tucil-Clan-Programmer-GIM-ITB">Simple Shoot 'Em Up Game in Godot</a></p>
+                <p>🔗 <a href="https://github.com/DanielDPW/Makalah_IF1220_Matdis">Custom Iterated Prisoner's Dilemma Simulation</a></p>
+                <p>🔗 <a href="https://github.com/DanielDPW/Makalah_IF2123_Algeo">Ordinary Differential Equation Solver</a></p>
+            </div>
+
+            <div>==============================================================</div>
+            <h2>Links</h2>
+            <div class="list">
+                <p>🔗 <a href="https://github.com/DanielDPW">GitHub</a></p>
+                <p>🔗 <a href="https://www.linkedin.com/in/daniel-pedrosa-wu-248107314/">LinkedIn</a></p>
+            </div>
+
+            <div class="cursor-container">
+                <div>Type 'help' for a list of commands</div>
+                <div>
+                    <span>> </span><span class="cursor"></span>
+                </div>
+            </div>            
+        </div>
+    </div>
+</body>
+</html>
